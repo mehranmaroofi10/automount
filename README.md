@@ -1,17 +1,20 @@
-**To mount the Storage unists automatically for Linux(Debian) servers**
+**To mount the Storage units automatically for Linux(Debian) servers**
 
-First step:
+**First step:**
 Choose a permanent directory for placing the Automount.py
 For example: ```/etc/automount/ ```
+
 
 Go to ```/lib/sysstemd/system``` Directory.
 
 
-Step 2:
+**Step 2:**
 We are going to make a system service.
+
 
 Make a file named : ```automount.service```
 Write the code bellow down in **automount.service**:
+
 
 ```
 [Unit]
@@ -38,8 +41,12 @@ WantedBy=multi-user.target
 ```chmod 644 /etc/systemd/system/automount.service```
 ```chhmod +x /etc/automount/automount.py```
 
+
+**Step3:**
 Now you can start and make the mounter restartable with codes bellow:
+
+
 ``` sudo systemctl deamon-reaload```
 ``` sudo systemctl start automount```
 ``` sudo systemctl enable automount```
-"sudo systemctl restart automount"
+```sudo systemctl restart automount```
