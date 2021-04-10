@@ -1,1 +1,1 @@
-# automoun
+# automount
