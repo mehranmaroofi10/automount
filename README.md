@@ -2,18 +2,18 @@
 
 First step:
 Choose a permanent directory for placing the Automount.py
-For example: "/etc/automount/"
+For example: ```/etc/automount/ ```
 
-Go to "/lib/sysstemd/system" Directory.
+Go to ```/lib/sysstemd/system``` Directory.
 
 
 Step 2:
 We are going to make a system service.
 
-Make a file named : "automount.service"
-Write the code bellow down in automount.service:
+Make a file named : ```automount.service```
+Write the code bellow down in **automount.service**:
 
-"
+```
 [Unit]
 Description= automount service.
 After=network-online.target
@@ -32,14 +32,14 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
-"
+```
 
-"cp automount.service /etc/systemd/system/automount.service"
-"chmod 644 /etc/systemd/system/automount.service"
-"chmod +x /etc/automount/automount.py"
+```cp automount.service /etc/systemd/system/automount.service```
+```chmod 644 /etc/systemd/system/automount.service```
+```chhmod +x /etc/automount/automount.py```
 
 Now you can start and make the mounter restartable with codes bellow:
-"sudo systemctl deamon-reaload"
-"sudo systemctl start automount"
-"sudo systemctl enable automount"
+``` sudo systemctl deamon-reaload```
+``` sudo systemctl start automount```
+``` sudo systemctl enable automount```
 "sudo systemctl restart automount"
